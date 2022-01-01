@@ -120,12 +120,25 @@ class EasyBrokerService
      */
     public function fetch(string $path, array $queryParams = []): array
     {
-        // Guzzle only allows adding the base api, that's why the prefive v1 is added for convenience
+        // Guzzle only allows adding the base api, that's why the prefix v1 is added for convenience
         $path = '/v1' . $path;
 
         try {
             return $this->getSuccessResponse($this->http->get($path, [
                 'query' => $queryParams,
+            ]));
+        } catch (ClientException $error) {
+            return $this->getErrorResponse($error);
+        }
+    }
+
+    public function submit(string $path, array $form): array
+    {
+        $path = '/v1' . $path;
+
+        try {
+            return $this->getSuccessResponse($this->http->post($path, [
+                'json' => $form,
             ]));
         } catch (ClientException $error) {
             return $this->getErrorResponse($error);

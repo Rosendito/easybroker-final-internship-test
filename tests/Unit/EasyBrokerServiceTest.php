@@ -104,4 +104,31 @@ class EasyBrokerServiceTest extends TestCase
         $this->assertEquals(404, $response['status']);
         $this->assertEquals('No se encontró la propiedad', $response['error']);
     }
+
+    public function test_submit_method()
+    {
+        $mockHandler = $this->createGuzzleMock([
+            $this->responseMock(201, '{ "status": "successful" }'),
+            $this->errorMock(
+                $this->responseMock(400, '{ "error": "Some fields are missing" }'),
+                'Invalid request',
+                'POST',
+                '/test'
+            ),
+        ]);
+
+        $service = new EBService($mockHandler);
+
+        // Success response
+        $response = $service->submit('/test', []);
+
+        $this->assertEquals(201, $response['status']);
+        $this->assertEquals('successful', $response['data']->status);
+
+        // Error response
+        $response = $service->submit('/test', []);
+
+        $this->assertEquals(400, $response['status']);
+        $this->assertEquals('Some fields are missing', $response['error']);
+    }
 }

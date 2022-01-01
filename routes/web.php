@@ -20,10 +20,15 @@ Route::get('/', function () {
 
 Route::get('/test', function () {
     $ebApi = new EasyBrokerService();
+    $form = [
+        'name' => 'test',
+        'email' => 'main@example.com',
+        'message' => 'AAA',
+        'source' => 'https://test.com'
+    ];
 
-    $properties = $ebApi->getProperties(1, 15, [
-        'statuses' => 'published'
-    ]);
+    $response = $ebApi->submit('/contact_requests', $form);
 
-    return response()->json($properties);
+
+    return response()->json($response);
 });
