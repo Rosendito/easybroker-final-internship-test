@@ -1,0 +1,79 @@
+{
+    "public_id": "EB-C0118",
+    "title": "Hermosa casa en Tijuana para ML",
+    "description": "Es bonita, hermosa, preciosa, soleada, tiene un súper adentro, es súper espaciosa, está como nueva, la mejor oportunidad de tu vida.",
+    "bedrooms": 1,
+    "bathrooms": 3,
+    "half_bathrooms": 2,
+    "parking_spaces": 4,
+    "lot_size": 250.0,
+    "construction_size": 400.0,
+    "lot_length": 0.0,
+    "lot_width": 0.0,
+    "floors": 3,
+    "floor": null,
+    "age": "new_construction",
+    "internal_id": null,
+    "expenses": null,
+    "location": {
+        "name": "18 de Marzo, Tijuana, Baja California",
+        "latitude": 32.4787819,
+        "longitude": -116.9355674,
+        "street": "",
+        "postal_code": "",
+        "show_exact_location": true,
+        "hide_exact_location": false
+    },
+    "property_type": "Casa",
+    "created_at": "2020-07-22T11:13:45-05:00",
+    "published_at": "2021-12-16T16:02:54-06:00",
+    "operations": [
+        {
+            "type": "sale",
+            "amount": 3242325.0,
+            "currency": "MXN",
+            "formatted_amount": "$3,242,325",
+            "unit": "total"
+        },
+        {
+            "type": "rental",
+            "amount": 2345.0,
+            "currency": "MXN",
+            "formatted_amount": "$2,345",
+            "unit": "total"
+        },
+        {
+            "type": "temporary_rental",
+            "amount": 5234.0,
+            "currency": "MXN",
+            "formatted_amount": "$5,234 por semana",
+            "period": "weekly"
+        }
+    ],
+    "property_files": [],
+    "videos": [],
+    "virtual_tour": null,
+    "collaboration_notes": null,
+    "public_url": "https://www.stagingeb.com/mx/inmueble/hermosa-casa-en-tijuana-para-ml",
+    "tags": [],
+    "show_prices": true,
+    "property_images": [],
+    "agent": {
+        "id": 3801,
+        "name": "Andrea Fernández",
+        "full_name": "Andrea Fernández",
+        "mobile_phone": null,
+        "profile_image_url": null,
+        "email": "andyfdz12jk@gmail.com"
+    },
+    "features": [
+        {
+            "name": "Estacionamiento techado",
+            "category": "Exterior"
+        },
+        {
+            "name": "Bodega",
+            "category": "General"
+        }
+    ]
+}

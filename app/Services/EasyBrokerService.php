@@ -106,6 +106,11 @@ class EasyBrokerService
         return $this->fetch('/properties', $query);
     }
 
+    public function getProperty(string $propertyId): array
+    {
+        return $this->fetch('/properties/' . $propertyId);
+    }
+
     /**
      * Fetch request (Method: GET)
      *

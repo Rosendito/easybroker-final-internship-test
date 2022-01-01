@@ -49,12 +49,15 @@ class EasyBrokerServiceTest extends TestCase
             $this->responseMock(200, $successResponseStub),
             $this->errorMock(
                 $this->responseMock(400, '{ "error": "El parametro search es inválido" }'),
-                'Resource not found', 'GET', '/test'
+                'Invalid request',
+                'GET',
+                '/v1/properties'
             ),
         ]);
 
         $service = new EBService($mockHandler);
 
+        // Success response
         $response = $service->getProperties($page, $limit, $search);
 
         $this->assertCount(15, $response['data']->content);
@@ -62,9 +65,43 @@ class EasyBrokerServiceTest extends TestCase
 
         $search['statuses'] = 'invalid_status';
 
+        // Error response
         $response = $service->getProperties($page, $limit, $search);
 
         $this->assertEquals(400, $response['status']);
         $this->assertEquals('El parametro search es inválido', $response['error']);
+    }
+
+    public function test_get_property_method()
+    {
+        $propertyId = 'EB-C0118';
+
+        $successResponseStub = $this->loadStub('get-property.json');
+
+        $mockHandler = $this->createGuzzleMock([
+            $this->responseMock(200, $successResponseStub),
+            $this->errorMock(
+                $this->responseMock(404, '{ "error": "No se encontró la propiedad" }'),
+                'Resource not found',
+                'GET',
+                '/v1/properties/' . $propertyId
+            ),
+        ]);
+
+        $service = new EBService($mockHandler);
+
+        // Success response
+        $response = $service->getProperty($propertyId);
+
+        $expectedResponse = json_decode($successResponseStub);
+
+        $this->assertEquals(200, $response['status']);
+        $this->assertEquals($expectedResponse, $response['data']);
+
+        // Error response
+        $response = $service->getProperty('invalid_property_id');
+
+        $this->assertEquals(404, $response['status']);
+        $this->assertEquals('No se encontró la propiedad', $response['error']);
     }
 }
