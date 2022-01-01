@@ -123,6 +123,13 @@ return [
 
     'cipher' => 'AES-256-CBC',
 
+    'services' => [
+        'easybroker' => [
+            'api_url' => env('EASYBROKER_API_URL'),
+            'api_key' => env('EASYBROKER_API_KEY'),
+        ],
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers
