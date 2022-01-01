@@ -131,4 +131,54 @@ class EasyBrokerServiceTest extends TestCase
         $this->assertEquals(400, $response['status']);
         $this->assertEquals('Some fields are missing', $response['error']);
     }
+
+    public function test_save_contact_request_method()
+    {
+        $form = [
+            'name' => 'John Doe',
+        ];
+
+        $mockHandler = $this->createGuzzleMock([
+            $this->errorMock(
+                $this->responseMock(422, '{ "error": "Debes especificar un email o teléfono.", "status": 422 }'),
+                'Invalid request',
+                'POST',
+                '/v1/contact_requests'
+            ),
+            $this->errorMock(
+                $this->responseMock(404, '{ "error": "No se encontró la propiedad especificada.", "status": 404 }'),
+                'Resource not found',
+                'POST',
+                '/v1/contact_requests'
+            ),
+            $this->responseMock(200, '{ "status": "successful" }'),
+        ]);
+
+        $service = new EBService($mockHandler);
+
+        // Error response 1
+        $response = $service->saveContactRequest($form);
+
+        $this->assertEquals(422, $response['status']);
+        $this->assertEquals('Debes especificar un email o teléfono.', $response['error']);
+
+        $form['email'] = 'john@example.test';
+        $form['message'] = 'Test message';
+        $form['property_id'] = 'EB-XXXX';
+        $form['source'] = 'https://example.test';
+
+        // Error response 2
+        $response = $service->saveContactRequest($form);
+
+        $this->assertEquals(404, $response['status']);
+        $this->assertEquals('No se encontró la propiedad especificada.', $response['error']);
+
+        $form['property_id'] = 'EB-C0118';
+
+        // Success response
+        $response = $service->saveContactRequest($form);
+
+        $this->assertEquals(200, $response['status']);
+        $this->assertEquals('successful', $response['data']->status);
+    }
 }

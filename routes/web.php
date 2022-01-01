@@ -21,14 +21,14 @@ Route::get('/', function () {
 Route::get('/test', function () {
     $ebApi = new EasyBrokerService();
     $form = [
-        'name' => 'test',
-        'email' => 'main@example.com',
+        // 'name' => 'test',
+        // 'email' => 'email',
         'message' => 'AAA',
-        'source' => 'https://test.com'
+        'source' => 'https://test.com',
+        'property_id' => 'EB-C0118'
     ];
 
-    $response = $ebApi->submit('/contact_requests', $form);
-
+    $response = $ebApi->saveContactRequest($form);
 
     return response()->json($response);
 });

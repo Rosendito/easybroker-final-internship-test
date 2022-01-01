@@ -106,9 +106,26 @@ class EasyBrokerService
         return $this->fetch('/properties', $query);
     }
 
+    /**
+     * Get property
+     *
+     * @param string $propertyId
+     * @return array
+     */
     public function getProperty(string $propertyId): array
     {
         return $this->fetch('/properties/' . $propertyId);
+    }
+
+    /**
+     * Save contact request
+     *
+     * @param array $data
+     * @return array
+     */
+    public function saveContactRequest(array $data): array
+    {
+        return $this->submit('/contact_requests', $data);
     }
 
     /**
