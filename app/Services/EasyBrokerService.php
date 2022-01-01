@@ -132,6 +132,13 @@ class EasyBrokerService
         }
     }
 
+    /**
+     * Submit request (Method: POST)
+     *
+     * @param string $path
+     * @param array $form
+     * @return array
+     */
     public function submit(string $path, array $form): array
     {
         $path = '/v1' . $path;
