@@ -1,0 +1,434 @@
+{
+    "pagination": {
+        "limit": 15,
+        "page": 1,
+        "total": 410,
+        "next_page": "https:\/\/api.stagingeb.com\/v1\/properties?limit=15&page=2&search%5Bstatuses%5D=published"
+    },
+    "content": [
+        {
+            "public_id": "EB-C0118",
+            "title": "Hermosa casa en Tijuana para ML",
+            "title_image_full": null,
+            "title_image_thumb": null,
+            "location": "18 de Marzo, Tijuana, Baja California",
+            "operations": [
+                {
+                    "type": "sale",
+                    "amount": 3242325,
+                    "currency": "MXN",
+                    "formatted_amount": "$3,242,325",
+                    "unit": "total"
+                },
+                {
+                    "type": "rental",
+                    "amount": 2345,
+                    "currency": "MXN",
+                    "formatted_amount": "$2,345",
+                    "unit": "total"
+                },
+                {
+                    "type": "temporary_rental",
+                    "amount": 5234,
+                    "currency": "MXN",
+                    "formatted_amount": "$5,234 por semana",
+                    "period": "weekly"
+                }
+            ],
+            "bedrooms": 1,
+            "bathrooms": 3,
+            "parking_spaces": 4,
+            "property_type": "Casa",
+            "lot_size": 250,
+            "construction_size": 400,
+            "updated_at": "2021-12-16T16:02:54-06:00",
+            "agent": "Andrea Fern\u00e1ndez",
+            "show_prices": true
+        },
+        {
+            "public_id": "EB-C0119",
+            "title": "Hermosa casa en Tijuana",
+            "title_image_full": null,
+            "title_image_thumb": null,
+            "location": "5 y 8 Hect\u00e1reas, Tijuana, Baja California",
+            "operations": [
+                {
+                    "type": "sale",
+                    "amount": 2504252,
+                    "currency": "MXN",
+                    "formatted_amount": "$2,504,252",
+                    "unit": "total"
+                },
+                {
+                    "type": "rental",
+                    "amount": 33253,
+                    "currency": "MXN",
+                    "formatted_amount": "$33,253",
+                    "unit": "total"
+                },
+                {
+                    "type": "temporary_rental",
+                    "amount": 52344,
+                    "currency": "MXN",
+                    "formatted_amount": "$52,344 por mes",
+                    "period": "monthly"
+                }
+            ],
+            "bedrooms": 7,
+            "bathrooms": 3,
+            "parking_spaces": 4,
+            "property_type": "Casa",
+            "lot_size": 0,
+            "construction_size": 0,
+            "updated_at": "2021-12-16T16:02:54-06:00",
+            "agent": "Alejandro Blanco Zivec",
+            "show_prices": true
+        },
+        {
+            "public_id": "EB-C0124",
+            "title": "Hermosa casa en mi barrio",
+            "title_image_full": null,
+            "title_image_thumb": null,
+            "location": "2da Ampliaci\u00f3n Kala, Campeche, Campeche",
+            "operations": [
+                {
+                    "type": "sale",
+                    "amount": 2413525,
+                    "currency": "MXN",
+                    "formatted_amount": "$2,413,525",
+                    "unit": "total"
+                },
+                {
+                    "type": "rental",
+                    "amount": 42345,
+                    "currency": "MXN",
+                    "formatted_amount": "$42,345",
+                    "unit": "total"
+                }
+            ],
+            "bedrooms": 3,
+            "bathrooms": 7,
+            "parking_spaces": null,
+            "property_type": "Casa",
+            "lot_size": 0,
+            "construction_size": 0,
+            "updated_at": "2021-12-16T16:02:54-06:00",
+            "agent": "Alejandro Blanco Zivec",
+            "show_prices": true
+        },
+        {
+            "public_id": "EB-C0135",
+            "title": "Estupenda mansi\u00f3n en Z\u00e1rate, Gran Buenos Aires. La residencia cuenta con 30 rec\u00e1",
+            "title_image_full": "https:\/\/assets.stagingeb.com\/property_images\/30135\/116394\/EB-C0135.png?version=1596730015",
+            "title_image_thumb": "https:\/\/assets.stagingeb.com\/property_images\/30135\/116394\/EB-C0135_thumb.png?version=1596730015",
+            "location": "3 de Mayo II, La Paz, Baja California Sur",
+            "operations": [
+                {
+                    "type": "sale",
+                    "amount": 3000000,
+                    "currency": "USD",
+                    "formatted_amount": "US$ 3,000,000",
+                    "unit": "total"
+                },
+                {
+                    "type": "rental",
+                    "amount": 50000,
+                    "currency": "USD",
+                    "formatted_amount": "US$ 50,000",
+                    "unit": "total"
+                },
+                {
+                    "type": "temporary_rental",
+                    "amount": 52000,
+                    "currency": "USD",
+                    "formatted_amount": "US$ 52,000 por mes",
+                    "period": "monthly"
+                }
+            ],
+            "bedrooms": 1,
+            "bathrooms": 3,
+            "parking_spaces": 2,
+            "property_type": "Casa",
+            "lot_size": 34,
+            "construction_size": 400,
+            "updated_at": "2021-12-16T16:02:54-06:00",
+            "agent": null,
+            "show_prices": false
+        },
+        {
+            "public_id": "EB-B5505",
+            "title": "Casa Amueblada en Venta Linda Vista, Guadalupe Nuevo Leon",
+            "title_image_full": "https:\/\/assets.stagingeb.com\/property_images\/25505\/51192\/EB-B5505.jpg?version=1555544456",
+            "title_image_thumb": "https:\/\/assets.stagingeb.com\/property_images\/25505\/51192\/EB-B5505_thumb.jpg?version=1555544456",
+            "location": "Lindavista, Guadalupe, Nuevo Le\u00f3n",
+            "operations": [
+                {
+                    "type": "sale",
+                    "amount": 4500000,
+                    "currency": "MXN",
+                    "formatted_amount": "$4,500,000",
+                    "unit": "total"
+                }
+            ],
+            "bedrooms": 4,
+            "bathrooms": 3,
+            "parking_spaces": 2,
+            "property_type": "Casa",
+            "lot_size": 200,
+            "construction_size": 260,
+            "updated_at": "2021-12-16T16:02:55-06:00",
+            "agent": "Alejandro Blanco Zivec",
+            "show_prices": true
+        },
+        {
+            "public_id": "EB-B5506",
+            "title": "Pre - Venta Departamentos en Torre Balzac San Pedro Garza Garc\u00eda",
+            "title_image_full": "https:\/\/assets.stagingeb.com\/property_images\/25506\/51214\/EB-B5506.jpg?version=1555544465",
+            "title_image_thumb": "https:\/\/assets.stagingeb.com\/property_images\/25506\/51214\/EB-B5506_thumb.jpg?version=1555544465",
+            "location": "Santa Mar\u00eda, Monterrey, Nuevo Le\u00f3n",
+            "operations": [
+                {
+                    "type": "sale",
+                    "amount": 2800000,
+                    "currency": "MXN",
+                    "formatted_amount": "$2,800,000",
+                    "unit": "total"
+                }
+            ],
+            "bedrooms": 0,
+            "bathrooms": null,
+            "parking_spaces": null,
+            "property_type": "Departamento",
+            "lot_size": 0,
+            "construction_size": 72,
+            "updated_at": "2021-12-16T16:02:55-06:00",
+            "agent": "Alejandro Blanco Zivec",
+            "show_prices": true
+        },
+        {
+            "public_id": "EB-B5514",
+            "title": "Casa en Venta en Vista Hermosa en Monterrey Nuevo Leon",
+            "title_image_full": "https:\/\/assets.stagingeb.com\/property_images\/25514\/51331\/EB-B5514.jpg?version=1555544534",
+            "title_image_thumb": "https:\/\/assets.stagingeb.com\/property_images\/25514\/51331\/EB-B5514_thumb.jpg?version=1555544534",
+            "location": "Vista Hermosa, Monterrey, Nuevo Le\u00f3n",
+            "operations": [
+                {
+                    "type": "sale",
+                    "amount": 4650000,
+                    "currency": "MXN",
+                    "formatted_amount": "$4,650,000",
+                    "unit": "total"
+                }
+            ],
+            "bedrooms": 3,
+            "bathrooms": 3,
+            "parking_spaces": 2,
+            "property_type": "Casa",
+            "lot_size": 209,
+            "construction_size": 285,
+            "updated_at": "2021-12-16T16:02:55-06:00",
+            "agent": "Alejandro Blanco Zivec",
+            "show_prices": true
+        },
+        {
+            "public_id": "EB-B5515",
+            "title": "Casa en Venta en Sierra Alta 9\u00b0 Sector Carretera Nacional",
+            "title_image_full": "https:\/\/assets.stagingeb.com\/property_images\/25515\/51355\/EB-B5515.jpg?version=1555544548",
+            "title_image_thumb": "https:\/\/assets.stagingeb.com\/property_images\/25515\/51355\/EB-B5515_thumb.jpg?version=1555544548",
+            "location": "Sierra Alta 9o Sector, Monterrey, Nuevo Le\u00f3n",
+            "operations": [
+                {
+                    "type": "sale",
+                    "amount": 18500000,
+                    "currency": "MXN",
+                    "formatted_amount": "$18,500,000",
+                    "unit": "total"
+                }
+            ],
+            "bedrooms": 5,
+            "bathrooms": 5,
+            "parking_spaces": 3,
+            "property_type": "Casa",
+            "lot_size": 425,
+            "construction_size": 1,
+            "updated_at": "2021-12-16T16:02:55-06:00",
+            "agent": "Alejandro Blanco Zivec",
+            "show_prices": true
+        },
+        {
+            "public_id": "EB-B5516",
+            "title": "Terreno en Venta en Santiago Nuevo Leon",
+            "title_image_full": "https:\/\/assets.stagingeb.com\/property_images\/25516\/51356\/EB-B5516.jpg?version=1555544549",
+            "title_image_thumb": "https:\/\/assets.stagingeb.com\/property_images\/25516\/51356\/EB-B5516_thumb.jpg?version=1555544549",
+            "location": "Santa Rosal\u00eda, Santiago, Nuevo Le\u00f3n",
+            "operations": [
+                {
+                    "type": "sale",
+                    "amount": 7300000,
+                    "currency": "MXN",
+                    "formatted_amount": "$7,300,000",
+                    "unit": "total"
+                }
+            ],
+            "bedrooms": null,
+            "bathrooms": null,
+            "parking_spaces": null,
+            "property_type": "Terreno",
+            "lot_size": 976,
+            "construction_size": 0,
+            "updated_at": "2021-12-16T16:02:55-06:00",
+            "agent": "Alejandro Blanco Zivec",
+            "show_prices": true
+        },
+        {
+            "public_id": "EB-B5517",
+            "title": "Casa en Venta en Valle de Bosquencinos Carretera Nacional",
+            "title_image_full": "https:\/\/assets.stagingeb.com\/property_images\/25517\/51361\/EB-B5517.jpg?version=1555544552",
+            "title_image_thumb": "https:\/\/assets.stagingeb.com\/property_images\/25517\/51361\/EB-B5517_thumb.jpg?version=1555544552",
+            "location": "Valle de Bosquencinos 1era. Etapa, Monterrey, Nuevo Le\u00f3n",
+            "operations": [
+                {
+                    "type": "sale",
+                    "amount": 9980000,
+                    "currency": "MXN",
+                    "formatted_amount": "$9,980,000",
+                    "unit": "total"
+                }
+            ],
+            "bedrooms": 4,
+            "bathrooms": 4,
+            "parking_spaces": 3,
+            "property_type": "Casa",
+            "lot_size": 458,
+            "construction_size": 433,
+            "updated_at": "2021-12-16T16:02:55-06:00",
+            "agent": "Alejandro Blanco Zivec",
+            "show_prices": true
+        },
+        {
+            "public_id": "EB-B5519",
+            "title": "Casa en Venta en Mitras Norte 2\u00b0 Sector en Monterrey",
+            "title_image_full": "https:\/\/assets.stagingeb.com\/property_images\/25519\/51375\/EB-B5519.jpg?version=1555544559",
+            "title_image_thumb": "https:\/\/assets.stagingeb.com\/property_images\/25519\/51375\/EB-B5519_thumb.jpg?version=1555544559",
+            "location": "Mitras Norte, Monterrey, Nuevo Le\u00f3n",
+            "operations": [
+                {
+                    "type": "sale",
+                    "amount": 2850000,
+                    "currency": "MXN",
+                    "formatted_amount": "$2,850,000",
+                    "unit": "total"
+                }
+            ],
+            "bedrooms": 3,
+            "bathrooms": 2,
+            "parking_spaces": null,
+            "property_type": "Casa",
+            "lot_size": 0,
+            "construction_size": 0,
+            "updated_at": "2021-12-16T16:02:55-06:00",
+            "agent": "Alejandro Blanco Zivec",
+            "show_prices": true
+        },
+        {
+            "public_id": "EB-B5522",
+            "title": "Casa en Venta en Carolco Carretera Nacional",
+            "title_image_full": "https:\/\/assets.stagingeb.com\/property_images\/25522\/51417\/EB-B5522.jpg?version=1555544583",
+            "title_image_thumb": "https:\/\/assets.stagingeb.com\/property_images\/25522\/51417\/EB-B5522_thumb.jpg?version=1555544583",
+            "location": "Carolco, Monterrey, Nuevo Le\u00f3n",
+            "operations": [
+                {
+                    "type": "sale",
+                    "amount": 8900000,
+                    "currency": "MXN",
+                    "formatted_amount": "$8,900,000",
+                    "unit": "total"
+                }
+            ],
+            "bedrooms": 4,
+            "bathrooms": 6,
+            "parking_spaces": 3,
+            "property_type": "Casa",
+            "lot_size": 330,
+            "construction_size": 464,
+            "updated_at": "2021-12-16T16:02:55-06:00",
+            "agent": "Alejandro Blanco Zivec",
+            "show_prices": true
+        },
+        {
+            "public_id": "EB-B5528",
+            "title": "Terreno en Venta en Allende Nuevo Leon",
+            "title_image_full": "https:\/\/assets.stagingeb.com\/property_images\/25528\/51508\/EB-B5528.jpg?version=1555544638",
+            "title_image_thumb": "https:\/\/assets.stagingeb.com\/property_images\/25528\/51508\/EB-B5528_thumb.jpg?version=1555544638",
+            "location": "Ciudad Allende, Allende, Nuevo Le\u00f3n",
+            "operations": [
+                {
+                    "type": "sale",
+                    "amount": 1000000,
+                    "currency": "MXN",
+                    "formatted_amount": "$1,000,000",
+                    "unit": "total"
+                }
+            ],
+            "bedrooms": null,
+            "bathrooms": null,
+            "parking_spaces": null,
+            "property_type": "Terreno",
+            "lot_size": 2000,
+            "construction_size": 0,
+            "updated_at": "2021-12-16T16:02:55-06:00",
+            "agent": "Alejandro Blanco Zivec",
+            "show_prices": true
+        },
+        {
+            "public_id": "EB-B5531",
+            "title": "Casa en Venta en La Encomienda en Escobedo Nl",
+            "title_image_full": "https:\/\/assets.stagingeb.com\/property_images\/25531\/51545\/EB-B5531.jpg?version=1555544662",
+            "title_image_thumb": "https:\/\/assets.stagingeb.com\/property_images\/25531\/51545\/EB-B5531_thumb.jpg?version=1555544662",
+            "location": "La Encomienda, General Escobedo, Nuevo Le\u00f3n",
+            "operations": [
+                {
+                    "type": "sale",
+                    "amount": 3150000,
+                    "currency": "MXN",
+                    "formatted_amount": "$3,150,000",
+                    "unit": "total"
+                }
+            ],
+            "bedrooms": 3,
+            "bathrooms": 3,
+            "parking_spaces": 2,
+            "property_type": "Casa",
+            "lot_size": 135,
+            "construction_size": 240,
+            "updated_at": "2021-12-16T16:02:55-06:00",
+            "agent": "Joaquin Reynoso",
+            "show_prices": true
+        },
+        {
+            "public_id": "EB-B5535",
+            "title": "Casa en Venta en Colinas de San Jer\u00f3nimo Monterrey",
+            "title_image_full": "https:\/\/assets.stagingeb.com\/property_images\/25535\/51582\/EB-B5535.jpg?version=1555544685",
+            "title_image_thumb": "https:\/\/assets.stagingeb.com\/property_images\/25535\/51582\/EB-B5535_thumb.jpg?version=1555544685",
+            "location": "Colinas de San Jer\u00f3nimo, Monterrey, Nuevo Le\u00f3n",
+            "operations": [
+                {
+                    "type": "sale",
+                    "amount": 7950000,
+                    "currency": "MXN",
+                    "formatted_amount": "$7,950,000",
+                    "unit": "total"
+                }
+            ],
+            "bedrooms": 5,
+            "bathrooms": 4,
+            "parking_spaces": 2,
+            "property_type": "Casa",
+            "lot_size": 352,
+            "construction_size": 430,
+            "updated_at": "2021-12-16T16:02:55-06:00",
+            "agent": "Alejandro Blanco Zivec",
+            "show_prices": true
+        }
+    ]
+}

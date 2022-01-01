@@ -3,14 +3,7 @@
 namespace Tests\Unit;
 
 use Tests\TestCase;
-use GuzzleHttp\HandlerStack;
-use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\Psr7\Response;
-use GuzzleHttp\Handler\MockHandler;
-use GuzzleHttp\Exception\RequestException;
 use App\Services\EasyBrokerService as EBService;
-use GuzzleHttp\Exception\ClientException;
-use GuzzleHttp\Promise\RejectedPromise;
 use Tests\CreateGuzzleMock;
 
 class EasyBrokerServiceTest extends TestCase
@@ -21,9 +14,8 @@ class EasyBrokerServiceTest extends TestCase
     {
         $mockHandler = $this->createGuzzleMock([
             $this->responseMock(200, '{ "content": "Response success" }'),
-            $this->errorMock($this->responseMock(
-                404,
-                '{ "error": "Resource not found" }'),
+            $this->errorMock(
+                $this->responseMock(404, '{ "error": "Resource not found" }'),
                 'Resource not found', 'GET', '/test'
             ),
         ]);
@@ -41,5 +33,38 @@ class EasyBrokerServiceTest extends TestCase
 
         $this->assertEquals(404, $response['status']);
         $this->assertEquals('Resource not found', $response['error']);
+    }
+
+    public function test_get_properties_method()
+    {
+        $page = 1;
+        $limit = 15;
+        $search = [
+            'statuses' => 'published',
+        ];
+
+        $successResponseStub = $this->loadStub('get-properties.json');
+
+        $mockHandler = $this->createGuzzleMock([
+            $this->responseMock(200, $successResponseStub),
+            $this->errorMock(
+                $this->responseMock(400, '{ "error": "El parametro search es inválido" }'),
+                'Resource not found', 'GET', '/test'
+            ),
+        ]);
+
+        $service = new EBService($mockHandler);
+
+        $response = $service->getProperties($page, $limit, $search);
+
+        $this->assertCount(15, $response['data']->content);
+        $this->assertEquals(200, $response['status']);
+
+        $search['statuses'] = 'invalid_status';
+
+        $response = $service->getProperties($page, $limit, $search);
+
+        $this->assertEquals(400, $response['status']);
+        $this->assertEquals('El parametro search es inválido', $response['error']);
     }
 }

@@ -21,5 +21,9 @@ Route::get('/', function () {
 Route::get('/test', function () {
     $ebApi = new EasyBrokerService();
 
-    return response()->json([]);
+    $properties = $ebApi->getProperties(1, 15, [
+        'statuses' => 'published'
+    ]);
+
+    return response()->json($properties);
 });

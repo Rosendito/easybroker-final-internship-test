@@ -3,9 +3,10 @@
 namespace App\Services;
 
 use GuzzleHttp\Client;
+use GuzzleHttp\HandlerStack;
 use Psr\Http\Message\ResponseInterface;
 use GuzzleHttp\Exception\ClientException;
-use GuzzleHttp\HandlerStack;
+use GuzzleHttp\Exception\RequestException;
 
 class EasyBrokerService
 {
@@ -82,13 +83,27 @@ class EasyBrokerService
     /**
      * Get properties
      *
+     * @param integer $page
+     * @param integer $limit
+     * @param array $search
      * @return array
      */
-    public function getProperties(): array
+    public function getProperties(
+        int $page = 1,
+        int $limit = 15,
+        array $search = []
+    ): array
     {
-        $response = $this->http->get('/v1/properties');
+        $query = [
+            'page' => $page,
+            'limit' => $limit,
+        ];
 
-        return  (array) json_decode($response->getBody()->getContents());
+        if (!empty($search)) {
+            $query['search'] = $search;
+        }
+
+        return $this->fetch('/properties', $query);
     }
 
     /**
@@ -100,6 +115,9 @@ class EasyBrokerService
      */
     public function fetch(string $path, array $queryParams = []): array
     {
+        // Guzzle only allows adding the base api, that's why the prefive v1 is added for convenience
+        $path = '/v1' . $path;
+
         try {
             return $this->getSuccessResponse($this->http->get($path, [
                 'query' => $queryParams,

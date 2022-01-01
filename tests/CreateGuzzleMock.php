@@ -65,4 +65,15 @@ trait CreateGuzzleMock
             $response
         );
     }
+
+    /**
+     * Load stub file
+     *
+     * @param string $filename
+     * @return string|null
+     */
+    protected function loadStub(string $filename): ?string
+    {
+        return file_get_contents(__DIR__ . '/stubs/' . $filename);
+    }
 }
