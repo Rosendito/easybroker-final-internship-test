@@ -1,5 +1,6 @@
 <?php
 
+use App\Services\EasyBrokerService;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +16,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/test', function () {
+    $ebApi = new EasyBrokerService();
+
+    return response()->json([]);
 });
