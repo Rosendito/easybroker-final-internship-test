@@ -11,20 +11,24 @@ use GuzzleHttp\Exception\RequestException;
 use App\Services\EasyBrokerService as EBService;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Promise\RejectedPromise;
+use Tests\CreateGuzzleMock;
 
 class EasyBrokerServiceTest extends TestCase
 {
+    use CreateGuzzleMock;
+
     public function test_fetch_method()
     {
-        // Enqueue responses
-        $mockHandler = new MockHandler([
-            new Response(200, [], '{ "content": "Response success" }'),
-            new ClientException('x', new Request('GET', 'test'), new Response(404, [], '{ "error": "Resource not found" }')),
+        $mockHandler = $this->createGuzzleMock([
+            $this->responseMock(200, '{ "content": "Response success" }'),
+            $this->errorMock($this->responseMock(
+                404,
+                '{ "error": "Resource not found" }'),
+                'Resource not found', 'GET', '/test'
+            ),
         ]);
 
-        $handlerStack = HandlerStack::create($mockHandler);
-
-        $service = new EBService($handlerStack);
+        $service = new EBService($mockHandler);
 
         // Success response
         $response = $service->fetch('/test');
