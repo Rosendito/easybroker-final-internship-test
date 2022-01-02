@@ -1,5 +1,6 @@
 <?php
 
+use App\Actions\Properties\ListProperties;
 use App\Services\EasyBrokerService;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +18,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/propiedades', ListProperties::class);
