@@ -23,4 +23,4 @@ Route::get('/', function () {
 
 Route::get('/propiedades', ListProperties::class);
 Route::get('/propiedades/{propertyId}', ShowProperty::class);
-Route::post('/propiedades/{propertyId}/contact', SendContactForProperty::class);
+Route::post('/propiedades/{propertyId}/contacto', SendContactForProperty::class);
