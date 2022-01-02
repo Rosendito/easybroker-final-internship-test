@@ -1,6 +1,7 @@
 <?php
 
 use App\Actions\Properties\ListProperties;
+use App\Actions\Properties\ShowProperty;
 use App\Services\EasyBrokerService;
 use Illuminate\Support\Facades\Route;
 
@@ -20,3 +21,4 @@ Route::get('/', function () {
 });
 
 Route::get('/propiedades', ListProperties::class);
+Route::get('/propiedades/{propertyId}', ShowProperty::class);
