@@ -3,6 +3,7 @@
 namespace App\Actions\Properties;
 
 use App\Actions\EasyBrokerActionBase;
+use Illuminate\Contracts\View\View;
 use Lorisleiva\Actions\ActionRequest;
 use Lorisleiva\Actions\Concerns\AsAction;
 
@@ -25,7 +26,23 @@ class ListProperties extends EasyBrokerActionBase
             $this->handleError($response);
         }
 
-        return (array) $response['data']['content'];
+        return [
+            'properties' => $response['data']->content,
+            'pagination' => $response['data']->pagination,
+        ];
+    }
+
+    /**
+     * Controller
+     *
+     * @param ActionRequest $request
+     * @return View
+     */
+    public function asController(ActionRequest $request): View
+    {
+        [$properties, $pagination] = $this->handle($request);
+
+        return view('pages.list-properties', compact('properties', 'pagination'));
     }
 
     /**

@@ -49,10 +49,13 @@ class ListPropertiesTest extends TestCase
     {
         $expectedGetProperties = [
             'status' => 200,
-            'data' => ['content' => [
-                ['id' => 1, 'name' => 'Property 1'],
-                ['id' => 2, 'name' => 'Property 2'],
-            ]],
+            'data' => (object) [
+                'content' => [
+                    ['id' => 1, 'name' => 'Property 1'],
+                    ['id' => 2, 'name' => 'Property 2'],
+                ],
+                'pagination' => []
+            ],
         ];
 
         $this->mock(EasyBrokerService::class, function (MockInterface $mock) use ($expectedGetProperties) {
@@ -64,10 +67,11 @@ class ListPropertiesTest extends TestCase
 
         $request = new ActionRequest();
 
-        $this->assertEquals(
-            $expectedGetProperties['data']['content'],
-            ListProperties::run($request)
-        );
+        $response = ListProperties::run($request);
+
+        $this->assertArrayHasKey('properties', $response);
+        $this->assertArrayHasKey('pagination', $response);
+        $this->assertCount(2, $response['properties']);
 
         $expectedGetProperties = [
             'status' => 500,

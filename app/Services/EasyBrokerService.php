@@ -61,10 +61,10 @@ class EasyBrokerService
      * @param HandlerStack|null $mockHandler
      * @return void
      */
-    protected function setupHttpClient(?HandlerStack $mockHandler): void
+    protected function setupHttpClient(HandlerStack $mockHandler = null): void
     {
         // Use a mock handler for testing if provided
-        if ($mockHandler) {
+        if ($mockHandler && $mockHandler->hasHandler()) {
             $this->http = new Client([
                 'handler' => $mockHandler,
             ]);
