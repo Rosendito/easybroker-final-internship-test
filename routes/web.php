@@ -17,18 +17,3 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('/test', function () {
-    $ebApi = new EasyBrokerService();
-    $form = [
-        // 'name' => 'test',
-        // 'email' => 'email',
-        'message' => 'AAA',
-        'source' => 'https://test.com',
-        'property_id' => 'EB-C0118'
-    ];
-
-    $response = $ebApi->saveContactRequest($form);
-
-    return response()->json($response);
-});

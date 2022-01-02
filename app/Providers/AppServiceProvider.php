@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Actions\EasyBrokerActionBase;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -13,7 +14,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->bind(EasyBrokerActionBase::class, function ($app) {
+            return new EasyBrokerActionBase(
+                $app->make(EasyBrokerService::class)
+            );
+        });
     }
 
     /**
