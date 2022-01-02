@@ -3,11 +3,10 @@
 @endphp
 
 <article class="media">
-  <figure class="media-left">
-    <p class="image is-64x64 is-square">
+  <figure class="media-left" style="width: 64px">
+    <p class="image is-square">
       <img src="{{ $agent->profile_image_url ?? $placeholder }}" class="is-rounded is-image-fit" />
     </p>
-    {{ $agent->profile_image_url}}
   </figure>
   <div class="media-content">
     <div class="content">

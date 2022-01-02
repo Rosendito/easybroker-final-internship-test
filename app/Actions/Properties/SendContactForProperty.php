@@ -20,11 +20,11 @@ class SendContactForProperty extends EasyBrokerActionBase
      */
     public function handle(ActionRequest $request, string $propertyId): array
     {
-        $form = $request->all();
+        $form = $request->only([
+            'name', 'email', 'phone', 'message'
+        ]);
         $form['source'] = config('app.url');
         $form['property_id'] = $propertyId;
-
-        // dd($request);
 
         $response = $this->service->saveContactRequest($form);
 

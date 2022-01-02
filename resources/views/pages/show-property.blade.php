@@ -19,7 +19,9 @@ $googleMap = "https://www.google.com.sa/maps/search/{$property->location->latitu
       <nav class="breadcrumb" aria-label="breadcrumbs">
         <ul>
           <li>
-            <a href="{{ url()->previous() }}">Propiedades</a>
+            <a
+              href="{{ route('properties.list') }}"
+            ">Propiedades</a>
           </li>
           <li class="is-active">
             <a href="#" aria-current="page">
@@ -83,5 +85,7 @@ $googleMap = "https://www.google.com.sa/maps/search/{$property->location->latitu
     </div>
   </div>
 </section>
+
+@include('sections.property-contact-form', ['property' => $property])
 
 @endsection
