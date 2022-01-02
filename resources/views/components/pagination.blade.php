@@ -2,15 +2,16 @@
   <nav class="pagination" role="navigation" aria-label="pagination">
     <a
       href="?page={{ $paginator->current_page - 1 }}"
-      class="pagination-previous {{ !$paginator->has_previous ? 'disabled' : '' }}"
+      class="pagination-previous"
       title="This is the first page"
-      disabled="{{ !$paginator->has_previous }}"
+      {{ $paginator->has_previous ? '' : 'disabled' }}
     >
       Anterior
     </a>
     <a
       href="?page={{ $paginator->current_page + 1 }}"
-      class="pagination-next {{ !$paginator->has_next ? 'disabled' : '' }}"
+      class="pagination-next"
+      {{ $paginator->has_next ? '' : 'disabled' }}
     >
       Siguiente
     </a>

@@ -1,28 +1,20 @@
 @php
-  $propertyTypes = [
-    'sale' => [
-      'class' => 'is-success',
-      'text' => 'Venta'
-    ],
-    'rental' => [
-      'class' => 'is-info',
-      'text' => 'Arriendo',
-    ],
-    'temporary_rental' => [
-      'class' => 'is-danger',
-      'text' => 'Arriendo temporal',
-    ],
-  ];
+  $image =
+    $property->title_image_thumb ??
+    'https://lh3.googleusercontent.com/proxy/ATdKAtR0gvBn6IoZXDnmiqYZQ8PWixXmM1tIfbWJ55OvxHgZ2nZZyW2y8yE_t6uJX2JJ3nzE9Qiuqx1nqI0JvixJ5GCJ5SmbQvn0OreIz0xDqtjAzmo';
 @endphp
 
-<a href="">
+<a href="{{ route('properties.show', $property->public_id) }}">
   <div class="card">
     <div class="card-image">
       <span class="card-image-tag tag is-link is-medium">
         {{ $property->property_type }}
       </span>
+      <span class="card-image-tag tag is-danger is-medium is-right">
+        {{ $property->public_id }}
+      </span>
       <figure class="image is-4by3">
-        <img src="{{ $property->title_image_thumb }}" alt="{{ $property->title }} Thumbnail">
+        <img src="{{ $image }}" alt="{{ $property->title }} Thumbnail">
       </figure>
     </div>
     <div class="card-content">
@@ -34,22 +26,7 @@
           {{ $property->location }}
         </small>
       </div>
-      <div class="field is-grouped is-grouped-multiline">
-        @foreach ($property->operations as $operation)
-          <div class="control">
-            <div class="tags has-addons">
-              <span
-                class="tag {{ $propertyTypes[$operation->type]['class'] }}"
-              >
-                {{ $propertyTypes[$operation->type]['text'] }}
-              </span>
-              <span class="tag">
-                {{ $operation->formatted_amount }}
-              </span>
-            </div>
-          </div>
-        @endforeach
-      </div>
+      <x-property-operations :operations="$property->operations"/>
     </div>
   </div>
 </a>

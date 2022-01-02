@@ -24,6 +24,16 @@
             left: 1rem;
             z-index: 10;
           }
+
+          .card-image-tag.is-right{
+            left: auto;
+            right: 1rem;
+          }
+
+          .is-image-fit{
+            object-fit: cover;
+            object-position: center;
+          }
         </style>
     </head>
     <body>
