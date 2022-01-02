@@ -24,6 +24,7 @@
         </div>
       @endforeach
     </div>
+    <x-pagination :paginator="$pagination"/>
   </div>
 </section>
 
