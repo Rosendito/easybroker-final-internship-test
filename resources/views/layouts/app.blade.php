@@ -14,6 +14,16 @@
           * {
             font-family: 'Nunito', sans-serif;
           }
+
+          .card-image{
+            position: relative;
+          }
+          .card-image-tag{
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            z-index: 10;
+          }
         </style>
     </head>
     <body>

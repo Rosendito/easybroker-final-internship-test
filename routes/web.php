@@ -21,6 +21,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/propiedades', ListProperties::class);
-Route::get('/propiedades/{propertyId}', ShowProperty::class);
-Route::post('/propiedades/{propertyId}/contacto', SendContactForProperty::class);
+Route::get('/propiedades', ListProperties::class)->name('properties.list');
+Route::get('/propiedades/{propertyId}', ShowProperty::class)->name('properties.show');
+Route::post('/propiedades/{propertyId}/contacto', SendContactForProperty::class)->name('properties.contact');
