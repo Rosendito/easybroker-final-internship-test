@@ -59,20 +59,17 @@ class ListProperties extends EasyBrokerActionBase
         $params = [
             'page' => $request->input('page', 1),
             'limit' => $request->input('per_page', 15),
+            'search' => [
+                'statuses' => 'published'
+            ]
         ];
 
-        $search = [];
-
         if ($request->has('min_price')) {
-            $search['min_price'] = $request->input('min_price');
+            $params['search']['min_price'] = $request->input('min_price');
         }
 
         if ($request->has('max_price')) {
-            $search['max_price'] = $request->input('max_price');
-        }
-
-        if (!empty($search)) {
-            $params['search'] = $search;
+            $params['search']['max_price'] = $request->input('max_price');
         }
 
         return $params;

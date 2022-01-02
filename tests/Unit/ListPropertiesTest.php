@@ -20,7 +20,11 @@ class ListPropertiesTest extends TestCase
 
         // Test default params returned by prepareParams()
         $this->assertEquals(
-            ['page' => 1, 'limit' => 15],
+            [
+                'page' => 1,
+                'limit' => 15,
+                'search' => ['statuses' => 'published']
+            ],
             $action->prepareParams($request),
         );
 
@@ -39,6 +43,7 @@ class ListPropertiesTest extends TestCase
                 'search' => [
                     'min_price' => 500000,
                     'max_price' => 1000000,
+                    'statuses' => 'published',
                 ],
             ],
             $action->prepareParams($request),
@@ -61,7 +66,6 @@ class ListPropertiesTest extends TestCase
         $this->mock(EasyBrokerService::class, function (MockInterface $mock) use ($expectedGetProperties) {
             $mock->shouldReceive('getProperties')
                 ->once()
-                ->with(1, 15)
                 ->andReturn($expectedGetProperties);
         });
 
@@ -81,7 +85,6 @@ class ListPropertiesTest extends TestCase
         $this->mock(EasyBrokerService::class, function (MockInterface $mock) use ($expectedGetProperties) {
             $mock->shouldReceive('getProperties')
                 ->once()
-                ->with(1, 15)
                 ->andReturn($expectedGetProperties);
         });
 
